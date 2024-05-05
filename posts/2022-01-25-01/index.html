@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>反馈控制系统学习笔记#3 | Haitao 的博客</title><meta name="keywords" content="反馈控制系统"><meta name="author" content="Wu Haitao"><meta name="copyright" content="Wu Haitao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="响应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="反馈控制系统学习笔记#3">
+<meta property="og:url" content="https://wu-haitao.github.io/posts/2022-01-25-01/index.html">
+<meta property="og:site_name" content="Haitao 的博客">
+<meta property="og:description" content="响应">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wu-haitao.github.io/img/bg2.jpg">
+<meta property="article:published_time" content="2022-01-25T10:34:37.000Z">
+<meta property="article:modified_time" content="2024-05-05T19:58:22.042Z">
+<meta property="article:author" content="Wu Haitao">
+<meta property="article:tag" content="反馈控制系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wu-haitao.github.io/img/bg2.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wu-haitao.github.io/posts/2022-01-25-01/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":false,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '反馈控制系统学习笔记#3',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2024-05-05 19:58:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Haitao 的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="loader-box"></div><div class="my-loader"></div></div><div id="web_bg_container_not_home"><div id="web_bg_not_home">     </div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.webp" onerror="onerror=null;src='/img/404.png'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/server/"><i class="fa-fw fas fa-server"></i><span> 服务器</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-pen-nib"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-laugh-squint"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fab fa-steam-symbol"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/tmdbList/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera-retro"></i><span> 摄影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-toolbox"></i><span> 工具</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://my-project-wu-haitao.vercel.app/ui/"><i class="fa-fw fab fa-buffer"></i><span> 博客留言管理</span></a></li><li><a class="site-page child" href="/tools/html_css_js_editor.html"><i class="fa-fw fas fa-code"></i><span> HTML/CSS/JavaScript 测试</span></a></li><li><a class="site-page child" href="/tools/regular_expression_tools.html"><i class="fa-fw fas fa-code"></i><span> 正则表达式</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Haitao 的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/server/"><i class="fa-fw fas fa-server"></i><span> 服务器</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-pen-nib"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-laugh-squint"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fab fa-steam-symbol"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/tmdbList/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera-retro"></i><span> 摄影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-toolbox"></i><span> 工具</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://my-project-wu-haitao.vercel.app/ui/"><i class="fa-fw fab fa-buffer"></i><span> 博客留言管理</span></a></li><li><a class="site-page child" href="/tools/html_css_js_editor.html"><i class="fa-fw fas fa-code"></i><span> HTML/CSS/JavaScript 测试</span></a></li><li><a class="site-page child" href="/tools/regular_expression_tools.html"><i class="fa-fw fas fa-code"></i><span> 正则表达式</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">反馈控制系统学习笔记#3</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2022-01-25T10:34:37.000Z" title="undefined 2022-01-25 10:34:37">2022-01-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">课程学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<h1 id="LTI-系统的响应"><a href="#LTI-系统的响应" class="headerlink" title="LTI 系统的响应"></a>LTI 系统的响应</h1><p>有这么几种响应的类型：</p>
+<ul>
+<li><p>脉冲响应（impulse response）</p>
+<p>和系统的传递函数相关</p>
+</li>
+<li><p>阶跃响应（step response）</p>
+<p>在实践中比较常见，与一些 LTI 系统中的物理参数有关</p>
+</li>
+<li><p>正弦响应（sinusoidal response）</p>
+<p>和系统的频率响应相关</p>
+</li>
+</ul>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>A rational transfer function can be described either as a ratio of two polynomials in \(s\)</p>
+<p>\[<br>H(s) = \frac{b(s)}{a(s)} = \frac{b_ms^m + b_{m-1}s^{m-1}+\cdots + b_1s + b_0}{a_ns^n + a_{n-1}s^{n-1}+\cdots + a_1s + a_0}<br>\]</p>
+<p>or as a ratio in factored pole-zero form</p>
+<p>\[<br>H(s) = K \frac{\prod_{i=1}^m (s - z_i)}{\prod_{i-1}^n (s - p_i)}<br>\]</p>
+<ul>
+<li>\(K = b_m / a_n\)</li>
+<li>the roots of the numerator, \(z_1, z_2, \ldots , z_m\) are called the finite zeros of the system</li>
+<li>the roots of the denominator, \(p_1, p_2, \ldots , p_n\) are called the finite poles of the system</li>
+<li>assuming the coefficients of \(a\) and \(b\) are real, complex poles or zeros come in complex conjugate pairs</li>
+</ul>
+<h2 id="Poles-and-zeros-plots"><a href="#Poles-and-zeros-plots" class="headerlink" title="Poles and zeros plots"></a>Poles and zeros plots</h2><p>Poles and zeros of a rational functions are often shown in a pole-zero plot: poles marked by “×”, zeros marked by “○”.</p>
+<p>例子：</p>
+<p>\[<br>F(s) = k \frac{(s+1.5)(s^2+2s+5)}{(s+2.5)(s-2)(s^2-2s+2)}<br>\]</p>
+<p><img src="1.png"></p>
+<h1 id="脉冲响应"><a href="#脉冲响应" class="headerlink" title="脉冲响应"></a>脉冲响应</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><p>一个 LTI 系统的脉冲响应是系统在输入信号\(u(t)\)为 unit impulse function 也就是\(\delta (t)\)且伴随 zero inital conditions 时的输出信号。</p>
+<p>Suppose the transfer function representation of a LTI system is</p>
+<p>\[<br>G(s) = \frac{Y(s)}{U(s)}<br>\]</p>
+<p>Its impulse response is given by \(u(t) = \delta (t) \rightarrow U(s) = 1\). We then have</p>
+<p>\[<br>Y(s) = G(s)<br>\]</p>
+<p>Inverse LT gives</p>
+<p>\[<br>y(t) = \mathcal{L}^{-1}\{ G(s) \} = g(t)<br>\]</p>
+<h2 id="First-order-system"><a href="#First-order-system" class="headerlink" title="First-order system"></a>First-order system</h2><p>考虑一个 first-order system</p>
+<p>\[<br>G(s) = \frac{1}{s + \sigma}<br>\]</p>
+<p>使用拉普拉斯逆变换可得</p>
+<p>\[<br>g(t) = e^{-\sigma t}<br>\]</p>
+<p>可以发现当\(\sigma &gt; 0\)时，随着\(t \rightarrow \infty\)，\(g(t) \rightarrow 0\)。那么脉冲响应是稳定（stable）的。</p>
+<p>如果\(\sigma &lt; 0\)，指数项随着时间增长，脉冲响应不稳定（unstable）。</p>
+<p>\(\sigma\)越大，衰减到零的速度越快。</p>
+<h2 id="Second-order-system"><a href="#Second-order-system" class="headerlink" title="Second-order system"></a>Second-order system</h2><p>一个标准的 2nd order transfer function 可被表示为</p>
+<p>\[<br>H(s) = \frac{K \omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2} = \frac{K\omega_n^2}{(s + \zeta\omega_n)^2 + \omega_n^2(1 - \zeta^2)}<br>\]</p>
+<p>其中\(K\)是系统的 Gain。</p>
+<p>A pair of complex poles, can be defined in terms of their real and imaginary parts, as follows:</p>
+<p>\[<br>s = -\sigma \pm j\omega_d<br>\]</p>
+<p>where</p>
+<p>\[<br>\sigma = \zeta \omega_n \ \mbox{and}\ \omega_d = \omega_n \sqrt{1 - \zeta^2}<br>\]</p>
+<p>\(\zeta\) is the damping ratio and \(\omega_n\) is the undamped natural frequency.</p>
+<p><img src="2.png"></p>
+<p>它的脉冲响应为</p>
+<p>\[<br>y(t) = h(t) = \frac{K\omega_n}{\sqrt{1 - \zeta^2}}e^{-\sigma t}\sin (\omega_d t)<br>\]</p>
+<h2 id="脉冲响应和-s-plane-上-pole-locations-的关系"><a href="#脉冲响应和-s-plane-上-pole-locations-的关系" class="headerlink" title="脉冲响应和 s-plane 上 pole locations 的关系"></a>脉冲响应和 s-plane 上 pole locations 的关系</h2><p><img src="3.png"></p>
+<ul>
+<li>real, positive poles correspond to growing exponential terms</li>
+<li>real, negative poles correspond to decaying exponential terms</li>
+<li>a pole at \(s = 0\) corresponds to a constant term</li>
+<li>complex pole pairs with positive real part correspond to exponentially growing sinusoidal terms</li>
+<li>complex pole pairs with negative real part correspond to exponentially decaying sinusoidal terms</li>
+<li>pure imaginary pole pairs correspond to sinusoidal terms</li>
+<li>repeated poles yield same types of terms, multiplied by powers of \(t\)</li>
+</ul>
+<h1 id="阶跃响应"><a href="#阶跃响应" class="headerlink" title="阶跃响应"></a>阶跃响应</h1><h2 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h2><p>The step response is the response of the system \(G(s)\) to a unit step input \(u(t) = t\).</p>
+<p>因为\(U(s) = \frac{1}{s}\)，所以可得阶跃响应</p>
+<p>\[<br>y(t) = \mathcal{L}^{-1}\left\{\frac{G(s)}{s}\right\}<br>\]</p>
+<h2 id="DC-gain"><a href="#DC-gain" class="headerlink" title="DC gain"></a>DC gain</h2><p><strong>Static/Steady-state/DC gain</strong>: this is the ratio of the output of a system to its input (presumed constant) after all transients have decayed.</p>
+<p>If the magnitude of the step input is \(A\), i.e. \(u(t) = AU(t) \rightarrow U(s) = \frac{A}{s}\), we then have (via Final Value Theorem)</p>
+<p>\[<br>\lim_{t \rightarrow \infty} y(t) = \lim_{s \rightarrow 0}sY(s) = \lim_{s \rightarrow 0}sG(s)\frac{A}{s} = AG(0)<br>\]</p>
+<p>Hence, DC gain,</p>
+<p>\[<br>K = \frac{\lim_{t \rightarrow \infty}y(t)}{\lim_{t \rightarrow \infty}u(t)} = \frac{AG(0)}{A} = G(0)<br>\]</p>
+<h2 id="Integrator"><a href="#Integrator" class="headerlink" title="Integrator"></a>Integrator</h2><p>\[<br>y(t) = \int_0^t K_iu(\tau)\mathrm{d}\tau<br>\]</p>
+<p>其中\(K_i\)是 integrator gain。</p>
+<p>传递函数为</p>
+<p>\[<br>G(s) = \frac{Y(s)}{U(s)} = \frac{K_i}{s}<br>\]</p>
+<p>阶跃响应为</p>
+<p>\[<br>Y(s) = G(s)U(s) = G(s)\frac{1}{s} = \frac{K_i}{s}<br>\]</p>
+<p>通过拉普拉斯逆变换得</p>
+<p>\[<br>y(t) = K_i t<br>\]</p>
+<h2 id="Differentiator"><a href="#Differentiator" class="headerlink" title="Differentiator"></a>Differentiator</h2><p>\[<br>y(t) = K_d \frac{\mathrm{d}u(t)}{\mathrm{d}t}<br>\]</p>
+<p>其中\(K_d\)是 derivative gain。</p>
+<p>传递函数为</p>
+<p>\[<br>G(s) = \frac{Y(s)}{U(s)} = K_d s<br>\]</p>
+<p>阶跃响应为</p>
+<p>\[<br>Y(s) = G(s)U(s) = \frac{G(s)}{s} = K_d<br>\]</p>
+<p>通过拉普拉斯逆变换得</p>
+<p>\[<br>y(t) = K_d \delta (t)<br>\]</p>
+<h2 id="First-order-systems"><a href="#First-order-systems" class="headerlink" title="First-order systems"></a>First-order systems</h2><p>\[<br>\tau \frac{\mathrm{d}y(t)}{\mathrm{d}t} + y(t) = Ku(t)<br>\]</p>
+<p>其中\(K\)是 steady-state/static gain 并且\(\tau\)是时间常数（time constant）。</p>
+<p>传递函数为</p>
+<p>\[<br>G(s) = \frac{Y(s)}{U(s)} = \frac{K}{\tau s + 1};\ y(0) = 0<br>\]</p>
+<p>阶跃响应为</p>
+<p>\[<br>Y(s) = G(s)U(s) = \frac{K}{\tau s + 1}\frac{1}{s} = \frac{K}{s} - \frac{K\tau}{\tau s + 1}<br>\]</p>
+<p>通过拉普拉斯逆变换得</p>
+<p>\[<br>y(t) = K - Ke^{-t/\tau}<br>\]</p>
+<h2 id="Second-order-systems"><a href="#Second-order-systems" class="headerlink" title="Second-order systems"></a>Second-order systems</h2><p>\[<br>\frac{\mathrm{d}^2 y(t)}{\mathrm{d} t^2} + 2\zeta \omega_n \frac{\mathrm{d}y(t)}{\mathrm{d}t} + \omega_n^2y(t) = K\omega_n^2u(t)<br>\]</p>
+<p>其中\(K\)，\(\zeta\)和\(\omega_n\)分别是 steady-state/static gain，damping ratio 和 undamped natural frequency。</p>
+<p>传递函数为</p>
+<p>\[<br>G(s) = \frac{Y(s)}{U(s)} = \frac{K\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2},\ y(0) = y\prime (0) = 0<br>\]</p>
+<p>阶跃响应为</p>
+<p>\[<br>Y(s) = \ldots = \frac{K}{s} - \frac{K(s + \zeta\omega_n)}{(s + \zeta\omega_n)^2 + \omega_n^2(1-\zeta^2)} -\frac{K\zeta}{\sqrt{1-\zeta^2}}\frac{\omega_n\sqrt{1-\zeta^2}}{(s + \zeta\omega_n)^2 + \omega_n^2(1 - \zeta^2)}<br>\]</p>
+<p>通过拉普拉斯逆变换得</p>
+<p>\[<br>y(t) = \ldots = K\left(1 - \frac{e^{-\sigma t}}{\sqrt{1-\zeta^2}}\sin [\omega_d t + \phi]\right)<br>\]</p>
+<p>\(|\mathcal{R}\{s\}| = \sigma = \zeta \omega_{n}\)决定 exponential envelope。</p>
+<p>\(\mathcal{L}\{s\} = \omega_{d} = \omega_{n}\sqrt{1 - \zeta^2}\)决定 frequency of the sinusoidal signal。</p>
+<p><img src="3_5.png"></p>
+<h2 id="阶跃响应和-s-plane-上-pole-locations-的关系"><a href="#阶跃响应和-s-plane-上-pole-locations-的关系" class="headerlink" title="阶跃响应和 s-plane 上 pole locations 的关系"></a>阶跃响应和 s-plane 上 pole locations 的关系</h2><p><img src="4.png"></p>
+<ul>
+<li>\(K\) determines the steady state output response to a step input.</li>
+<li>3 types of responses possible: underdamped \(\zeta &lt; 1\), overdamped \(\zeta &gt; 1\) and critically damped \(\zeta = 1\).</li>
+<li>For underdamped response<ul>
+<li>real part of pole (\(\sigma = \zeta \omega_n\)) determines how quickly the oscillations decay away</li>
+<li>imaginary part of pole (\(\omega_d = \omega_n\sqrt{1 - \zeta^2}\)) gives you the frequency of the oscillation</li>
+</ul>
+</li>
+<li>For over- and critically damped systems, they behave more like first order systems, except more sluggish.</li>
+</ul>
+<p>示例：<a target="_blank" rel="noopener" href="https://lpsa.swarthmore.edu/SecondOrder/SOI.html">https://lpsa.swarthmore.edu/SecondOrder/SOI.html</a></p>
+<h1 id="时域上的一些规范"><a href="#时域上的一些规范" class="headerlink" title="时域上的一些规范"></a>时域上的一些规范</h1><p>在控制系统设计中，以下几个时域上的规范经常被用到：</p>
+<ul>
+<li><strong>rise time</strong>, \(t_r\): the time it takes the system to reach the vicinity of its new set point</li>
+<li><strong>settling time</strong>, \(t_s\): the time it takes the system transient to decay</li>
+<li><strong>overshoot</strong>, \(M_p\): the maximum amount the system overshoots its final value divided by its final value</li>
+<li><strong>peak time</strong>, \(t_p\): the time it takes the system to reach the maximum overshoot point</li>
+</ul>
+<p><img src="5.png"></p>
+<h2 id="Rise-time"><a href="#Rise-time" class="headerlink" title="Rise time"></a>Rise time</h2><p>最常见的定义为系统响应从10%到90%稳态值所需要的时间。</p>
+<p>不太容易能得到准确的表达式。</p>
+<p>对于一个标准的 2nd-order 传递函数，可得近似：</p>
+<p><img src="6.png"></p>
+<p>\[<br>t_r = \frac{2.16\zeta + 0.60}{\omega_n}\ \mbox{for}\ 0.3 \leq \zeta \leq 0.8<br>\]</p>
+<p>取平均值\(\zeta = 0.55\)得</p>
+<p>\[<br>t \approx \frac{1.8}{\omega_n}<br>\]</p>
+<p>注意：仅适用无 zero 的 2nd-order system，其它系统会有较大误差。</p>
+<p>对于给定的\(\zeta\)，越大的\(\omega_n\)会有更快的响应：</p>
+<p><img src="7.png"></p>
+<p>对于给定的\(\omega_n\)，更小的\(\zeta\)会让响应稍微加快：</p>
+<p><img src="8.png"></p>
+<h2 id="Overshoot"><a href="#Overshoot" class="headerlink" title="Overshoot"></a>Overshoot</h2><p>\[<br>M_p = Ke^{-\pi \zeta / \sqrt{1 - \zeta^2}},\ 0\leq \zeta &lt;1<br>\]</p>
+<p>百分比形式：</p>
+<p>\[<br>\%M_p = e^{-\pi\zeta / \sqrt{1 - \zeta^2}} \times 100\%<br>\]</p>
+<p><img src="9.png"></p>
+<h2 id="Settling-time"><a href="#Settling-time" class="headerlink" title="Settling time"></a>Settling time</h2><p>This is the time required for the transient to decay to a small value so that \(y(t)\) is almost in the steady-state.</p>
+<p>Measure of smallness: 1%; 2% or 5% have been used.</p>
+<p>Notice that the deviation of \(y\) from \(K\) is enclosed by the envelop of the exponential function</p>
+<p>\[<br>K\left(1 \pm \frac{e^{-\zeta \omega_n t}}{\sqrt{1 - \zeta^2}}\right)<br>\]</p>
+<p>那么计算2%的 settling time：</p>
+<p>\[<br>\begin{align}<br>\frac{e^{-\zeta \omega_n t}}{\sqrt{1 - \zeta^2}} &amp;= 0.02<br>\newline<br>e^{-\zeta\omega_n t} &amp;\approx 0.02<br>\newline<br>\zeta \omega_n t_s &amp;\approx 4<br>\newline<br>t_s &amp;= \frac{4}{\zeta\omega_n} = \frac{4}{\sigma}<br>\end{align}<br>\]</p>
+<h2 id="Design-Synthesis"><a href="#Design-Synthesis" class="headerlink" title="Design Synthesis"></a>Design Synthesis</h2><p>Selection of pole and zero locations to meet these time-domain specifications for dynamic response.</p>
+<p><img src="10.png"></p>
+<h1 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h1><p>A linear time-invariant system is said to be stable if all the roots of the transfer function denominator polynomial have negative real-parts (i.e. all in the left half plane, \(\sigma &lt; 0\)) and is unstable otherwise (\(\sigma &gt; 0\)).</p>
+<p>The real-part of the pole determine its stability; for a stable system, all poles must be in the LHP.</p>
+<p>If the system has any poles in the RHP, it is unstable.</p>
+<p>If the system has nonrepeated \(j\omega\)-axis poles, it is marginally stable.</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8F%8D%E9%A6%88%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/">反馈控制系统</a></div><div class="post_share"><div class="social-share" data-image="/img/bg2.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/2022-01-27-01/"><img class="prev-cover" src="/img/networkBG.jpg" onerror="onerror=null;src='/img/404.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计算机网络：Multiplexing 和 Switching</div></div></a></div><div class="next-post pull-right"><a href="/posts/2022-01-21-02/"><img class="next-cover" src="/img/bg2.jpg" onerror="onerror=null;src='/img/404.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">反馈控制系统学习笔记#2</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/2022-01-15-01/" title="反馈控制系统学习笔记#1"><img class="cover" src="/img/bg2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-15</div><div class="title">反馈控制系统学习笔记#1</div></div></a></div><div><a href="/posts/2022-01-21-02/" title="反馈控制系统学习笔记#2"><img class="cover" src="/img/bg2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-21</div><div class="title">反馈控制系统学习笔记#2</div></div></a></div><div><a href="/posts/2022-02-10-01/" title="反馈控制系统学习笔记#4"><img class="cover" src="/img/bg2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-10</div><div class="title">反馈控制系统学习笔记#4</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/404.png'" alt="avatar"/></div><div class="author-info__name">Wu Haitao</div><div class="author-info__description">这个人很懒~</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Wu-Haitao"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Wu-Haitao" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:wuhaitao99.st@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a><a class="social-icon" href="https://steamcommunity.com/id/Wu_Haitao" target="_blank" title="Steam"><i class="fab fa-steam"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LTI-%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%93%8D%E5%BA%94"><span class="toc-number">1.</span> <span class="toc-text">LTI 系统的响应</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Poles-and-zeros-plots"><span class="toc-number">1.2.</span> <span class="toc-text">Poles and zeros plots</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%84%89%E5%86%B2%E5%93%8D%E5%BA%94"><span class="toc-number">2.</span> <span class="toc-text">脉冲响应</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#First-order-system"><span class="toc-number">2.2.</span> <span class="toc-text">First-order system</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Second-order-system"><span class="toc-number">2.3.</span> <span class="toc-text">Second-order system</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%84%89%E5%86%B2%E5%93%8D%E5%BA%94%E5%92%8C-s-plane-%E4%B8%8A-pole-locations-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.4.</span> <span class="toc-text">脉冲响应和 s-plane 上 pole locations 的关系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%B6%E8%B7%83%E5%93%8D%E5%BA%94"><span class="toc-number">3.</span> <span class="toc-text">阶跃响应</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-number">3.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DC-gain"><span class="toc-number">3.2.</span> <span class="toc-text">DC gain</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integrator"><span class="toc-number">3.3.</span> <span class="toc-text">Integrator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Differentiator"><span class="toc-number">3.4.</span> <span class="toc-text">Differentiator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#First-order-systems"><span class="toc-number">3.5.</span> <span class="toc-text">First-order systems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Second-order-systems"><span class="toc-number">3.6.</span> <span class="toc-text">Second-order systems</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B6%E8%B7%83%E5%93%8D%E5%BA%94%E5%92%8C-s-plane-%E4%B8%8A-pole-locations-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">3.7.</span> <span class="toc-text">阶跃响应和 s-plane 上 pole locations 的关系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%B6%E5%9F%9F%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E8%A7%84%E8%8C%83"><span class="toc-number">4.</span> <span class="toc-text">时域上的一些规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Rise-time"><span class="toc-number">4.1.</span> <span class="toc-text">Rise time</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Overshoot"><span class="toc-number">4.2.</span> <span class="toc-text">Overshoot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Settling-time"><span class="toc-number">4.3.</span> <span class="toc-text">Settling time</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Design-Synthesis"><span class="toc-number">4.4.</span> <span class="toc-text">Design Synthesis</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-number">5.</span> <span class="toc-text">稳定性</span></a></li></ol></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Unity-%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">Unity 学习</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">前端学习</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">课程学习笔记</span><span class="card-category-list-count">39</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 1.2em; color: #999">C#</a> <a href="/tags/CSS/" style="font-size: 1.2em; color: #999">CSS</a> <a href="/tags/Computer-Architecture/" style="font-size: 1.25em; color: #999">Computer Architecture</a> <a href="/tags/HTML/" style="font-size: 1.2em; color: #999">HTML</a> <a href="/tags/Hexo/" style="font-size: 1.15em; color: #999">Hexo</a> <a href="/tags/Java/" style="font-size: 1.1em; color: #999">Java</a> <a href="/tags/Latex/" style="font-size: 1.1em; color: #999">Latex</a> <a href="/tags/Unity/" style="font-size: 1.35em; color: #999">Unity</a> <a href="/tags/WPF/" style="font-size: 1.1em; color: #999">WPF</a> <a href="/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/" style="font-size: 1.4em; color: #999">信号与系统</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.35em; color: #999">前端</a> <a href="/tags/%E5%8F%8D%E9%A6%88%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/" style="font-size: 1.5em; color: #999">反馈控制系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">数据结构</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.45em; color: #999">机器学习</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%9B%B8%E5%85%B3/" style="font-size: 1.1em; color: #999">游戏相关</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.3em; color: #999">算法</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.5em; color: #999">计算机网络</a></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Wu Haitao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+btf.isJqueryLoad(function() {
+  $(window).on('load', function() {
+    preloader.endLoading();
+  });
+});</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://unpkg.com/@waline/client@v2/dist/waline.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://my-project-wu-haitao.vercel.app/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      imageUploader: false,
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://unpkg.com/@waline/client@v2/dist/waline.js').then(initWaline)
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script id="canvas_nest" defer="defer" color="255,255,255" opacity="0.8" zIndex="-1" count="99" mobile="false" src="/js/canvas-nest.min.js"></script><script src="/js/removeBG.js"></script><script src="/js/FunnyTitle.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = false;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="/js/ClickShowText.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script></div><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+btf.isJqueryLoad(function() {
+  $(window).on('load', function() {
+    preloader.endLoading();
+  });
+});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"position":"right","hOffset":50,"vOffset":-25},"mobile":{"show":false},"log":false});</script></body></html>

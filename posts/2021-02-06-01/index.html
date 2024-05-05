@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>信号与系统学习笔记#1 | Haitao 的博客</title><meta name="keywords" content="信号与系统"><meta name="author" content="Wu Haitao"><meta name="copyright" content="Wu Haitao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="信号">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信号与系统学习笔记#1">
+<meta property="og:url" content="https://wu-haitao.github.io/posts/2021-02-06-01/index.html">
+<meta property="og:site_name" content="Haitao 的博客">
+<meta property="og:description" content="信号">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wu-haitao.github.io/img/bg2.jpg">
+<meta property="article:published_time" content="2021-02-06T13:34:52.000Z">
+<meta property="article:modified_time" content="2024-05-05T19:58:21.898Z">
+<meta property="article:author" content="Wu Haitao">
+<meta property="article:tag" content="信号与系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wu-haitao.github.io/img/bg2.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wu-haitao.github.io/posts/2021-02-06-01/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":false,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '信号与系统学习笔记#1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2024-05-05 19:58:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Haitao 的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="loader-box"></div><div class="my-loader"></div></div><div id="web_bg_container_not_home"><div id="web_bg_not_home">     </div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.webp" onerror="onerror=null;src='/img/404.png'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/server/"><i class="fa-fw fas fa-server"></i><span> 服务器</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-pen-nib"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-laugh-squint"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fab fa-steam-symbol"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/tmdbList/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera-retro"></i><span> 摄影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-toolbox"></i><span> 工具</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://my-project-wu-haitao.vercel.app/ui/"><i class="fa-fw fab fa-buffer"></i><span> 博客留言管理</span></a></li><li><a class="site-page child" href="/tools/html_css_js_editor.html"><i class="fa-fw fas fa-code"></i><span> HTML/CSS/JavaScript 测试</span></a></li><li><a class="site-page child" href="/tools/regular_expression_tools.html"><i class="fa-fw fas fa-code"></i><span> 正则表达式</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Haitao 的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/server/"><i class="fa-fw fas fa-server"></i><span> 服务器</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-pen-nib"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-laugh-squint"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fab fa-steam-symbol"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/tmdbList/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera-retro"></i><span> 摄影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-toolbox"></i><span> 工具</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://my-project-wu-haitao.vercel.app/ui/"><i class="fa-fw fab fa-buffer"></i><span> 博客留言管理</span></a></li><li><a class="site-page child" href="/tools/html_css_js_editor.html"><i class="fa-fw fas fa-code"></i><span> HTML/CSS/JavaScript 测试</span></a></li><li><a class="site-page child" href="/tools/regular_expression_tools.html"><i class="fa-fw fas fa-code"></i><span> 正则表达式</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">信号与系统学习笔记#1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2021-02-06T13:34:52.000Z" title="undefined 2021-02-06 13:34:52">2021-02-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">课程学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<h1 id="信号分类"><a href="#信号分类" class="headerlink" title="信号分类"></a>信号分类</h1><h2 id="Analog-and-Digital-signals"><a href="#Analog-and-Digital-signals" class="headerlink" title="Analog and Digital signals"></a>Analog and Digital signals</h2><h3 id="Continuous-time-signal"><a href="#Continuous-time-signal" class="headerlink" title="Continuous-time signal"></a>Continuous-time signal</h3><p>当\(t\)为一个连续变量时信号\(x(t)\)被称作连续时间信号。</p>
+<p>通常用波形图来描述。</p>
+<ul>
+<li><p>Analog signal</p>
+<p>A continuous-time signal that can take on any value in the continuous interval \((a, b)\), where \(a\) may be \(-\infty\) and \(b\) may be \(+\infty\).</p>
+</li>
+<li><p>Digital signal</p>
+<p>A continuous-time signal that can take on only a finite number of distinct levels.</p>
+</li>
+</ul>
+<h3 id="Discrete-time-signal"><a href="#Discrete-time-signal" class="headerlink" title="Discrete-time signal"></a>Discrete-time signal</h3><p>如果信号只在离散的时间戳上有定义，那么信号被称为离散时间信号。</p>
+<p>一个离散时间信号通常写作\(x_n\), 其中\(n\)是一个整数，并且被描述为数字序列</p>
+<p>\[<br>\{ \dots x_{-1},\ x_0,\  x_1,\dots,\ x_n,\dots \}<br>\]</p>
+<p>离散时间信号可以是自然得到的，比如每日股票平均价格，或者是通过对连续时间信号进行采样得到的。</p>
+<ul>
+<li><p>Analog sequence</p>
+<p>A discrete-time signal that can take any value in an interval \((a, b)\), where \(a\) may be \(-\infty\) and \(b\) may be \(+\infty\).</p>
+</li>
+<li><p>Digital sequence</p>
+<p>A discrete-time signal that can take on only a finite number of distinct levels.</p>
+</li>
+</ul>
+<h2 id="Periodic-and-Aperiodic-signals"><a href="#Periodic-and-Aperiodic-signals" class="headerlink" title="Periodic and Aperiodic signals"></a>Periodic and Aperiodic signals</h2><p>信号\(x(t)\)具有周期性如果存在一个正值\(T\)使得</p>
+<p>\[<br>x(t)=x(t+T);\ \forall t<br>\]</p>
+<p>使等式成立的最小的\(T\)值被称为“基本周期”（fundamental period），或者简单地说，就是\(x(t)\)的“周期”。</p>
+<p>“基本周期”的倒数被称为“基本频率”（fundamental frequency）。</p>
+<p>不具有周期性（periodic）的信号具有非周期性（aperiodic）。</p>
+<h2 id="Real-and-Complex-signals"><a href="#Real-and-Complex-signals" class="headerlink" title="Real and Complex signals"></a>Real and Complex signals</h2><p>信号\(x(t)\)为复信号如果其可被表示为\(a(t)+jb(t)\)，其中\(a(t)\)和\(b(t)\)是实信号，\(j\)为虚数单位。</p>
+<ul>
+<li><p>Cartesian 的形式：</p>
+<p>\[<br>x(t)=a(t)+jb(t)<br>\]</p>
+<p>其中</p>
+<p>\(a(t)=Re[x(t)]\)    Real part of \(x(t)\)</p>
+<p>\(b(t)=Im[x(t)]\)    Imaginary part of \(x(t)\)</p>
+</li>
+<li><p>Polar 的形式：</p>
+<p>\[<br>x(t)=r(t)\exp(j\theta(t))<br>\]</p>
+<p>其中</p>
+<p>\(r(t)=|x(t)|\)    Magnitude of \(x(t)\)</p>
+<p>\(\theta(t)=\angle x(t)\)    Phase Angle of \(x(t)\)</p>
+</li>
+<li><p>Cartesian 和 Polar 之间的关系</p>
+<p>\[<br>a(t)=r(t)\cos[\theta(t)]\quad b(t)=r(t)\sin[\theta(t)]<br>\]</p>
+<p>\[<br>r(t)=\sqrt {a^2(t)+b^2(t)}\quad \theta(t)=\tan^{-1}(\frac{b(t)}{a(t)})<br>\]</p>
+</li>
+</ul>
+<p>复信号\(x(t)\)的共轭信号写作\(x^*(t)\)，通过取\(x(t)\)虚部的相反数得到。即替换\(b(t)\)为\(-b(t)\)或替换\(\theta(t)\)为\(-\theta(t)\)。</p>
+<p>\(x(t)\)为实信号如果对于任何\(t\)值它的取值都是实数。这是复信号在\(b(t)=0\)或者\(\theta(t)=\pm n\pi=\pm n180°\)的一个特殊情况。</p>
+<h2 id="Energy-and-Power-signals"><a href="#Energy-and-Power-signals" class="headerlink" title="Energy and Power signals"></a>Energy and Power signals</h2><p>信号\(x(t)\)的总能量\(E\)定义为：</p>
+<p>\[<br>E=\int_{-\infty}^{\infty}|x(t)|^2\mathrm{d}t<br>\]</p>
+<p>\(x(t)\)被称为是一个能量信号当且仅当\(0&lt;E&lt;\infty\)。</p>
+<p>信号\(x(t)\)的平均功率\(P\)定义为：</p>
+<p>\[<br>P=\lim_{\tau\to\infty} (\frac{1}{2\tau}\int_{-\tau}^{\tau}|x(t)|^2\mathrm{d}t)<br>\]</p>
+<p>\(x(t)\)被称为是一个功率信号当且仅当\(0&lt;P&lt;\infty\)。</p>
+<p>\(E=\mbox{finite}\) → \(P=0\)</p>
+<p>\(P=\mbox{finite}\) → \(E=0\)</p>
+<p>如果两个条件都不满足那么信号不属于其中任何一种。</p>
+<h1 id="基础信号"><a href="#基础信号" class="headerlink" title="基础信号"></a>基础信号</h1><h2 id="The-Unit-Step-function"><a href="#The-Unit-Step-function" class="headerlink" title="The Unit Step function"></a>The Unit Step function</h2><p>\[<br>u(t)=<br>\begin{cases}<br>1;\ t\geq 0<br>\newline<br>0;\ t&lt;0<br>\end{cases}<br>\]</p>
+<p><img src="1.png"></p>
+<h2 id="The-Sign-or-Signum-function"><a href="#The-Sign-or-Signum-function" class="headerlink" title="The Sign(or Signum) function"></a>The Sign(or Signum) function</h2><p>\[<br>\begin{split}<br>\mathrm{sgn}(t)&amp;=<br>\begin{cases}<br>+1;\ t\geq 0<br>\newline<br>-1;\ t&lt;0<br>\end{cases}<br>\newline<br>&amp;=2u(t)-1<br>\end{split}<br>\]</p>
+<p><img src="2.png"></p>
+<h2 id="The-Rectangle-function"><a href="#The-Rectangle-function" class="headerlink" title="The Rectangle function"></a>The Rectangle function</h2><p>\[<br>\mathrm{rect}(\frac{t}{T})=<br>\begin{cases}<br>1;\ -\frac{T}{2}\leq t &lt; \frac{T}{2}<br>\newline<br>0;\ \mbox{elsewhere}<br>\end{cases}<br>\]</p>
+<p><img src="3.png"></p>
+<h2 id="The-Triangle-function"><a href="#The-Triangle-function" class="headerlink" title="The Triangle function"></a>The Triangle function</h2><p>\[<br>\mathrm{tri}(\frac{t}{T})=<br>\begin{cases}<br>1-\frac{|t|}{T};\ |t|\leq T<br>\newline<br>0;\ |t|&gt;T<br>\end{cases}<br>\]</p>
+<p><img src="4.png"></p>
+<h2 id="The-Sinc-sine-Cardinal-function"><a href="#The-Sinc-sine-Cardinal-function" class="headerlink" title="The Sinc(sine Cardinal) function"></a>The Sinc(sine Cardinal) function</h2><p>\[<br>\mathrm{sinc}(\frac{t}{T})=<br>\begin{cases}<br>\frac{\sin(\pi t/T)}{\pi t/T};\ t\neq 0<br>\newline<br>1;\ t=0<br>\end{cases}<br>\]</p>
+<p>\[<br>\mbox{Note: }<br>\mathrm{sinc}(x)=<br>\begin{cases}<br>0;\ x=\mbox{integer}\neq 0<br>\newline<br>1;\ x=0<br>\end{cases}<br>\]</p>
+<p><img src="5.png"></p>
+<h2 id="Real-Exponential-signal"><a href="#Real-Exponential-signal" class="headerlink" title="Real Exponential signal"></a>Real Exponential signal</h2><p>\[<br>x(t)=\exp(-\sigma t)<br>\]</p>
+<p><img src="6.png"></p>
+<h2 id="The-Unit-Impulse-or-Dirac-δ-function"><a href="#The-Unit-Impulse-or-Dirac-δ-function" class="headerlink" title="The Unit Impulse(or Dirac-δ) function"></a>The Unit Impulse(or Dirac-δ) function</h2><p>\[<br>\delta (t)=<br>\begin{cases}<br>\infty;\ t=0<br>\newline<br>0;\ t\neq 0<br>\end{cases}<br>\mbox{and}<br>\int_{-\varepsilon}^{\varepsilon}\delta (t)\mathrm{d}t=1; \forall \varepsilon &gt;0<br>\]</p>
+<p><img src="7.png"></p>
+<h2 id="The-Dirac-Comb-function"><a href="#The-Dirac-Comb-function" class="headerlink" title="The Dirac Comb function"></a>The Dirac Comb function</h2><p>\[<br>\xi_T(t)=\sum_{n=-\infty }^{\infty }\delta (t-nT)<br>\]</p>
+<p><img src="8.png"></p>
+<h2 id="Sinusoidal-Signals"><a href="#Sinusoidal-Signals" class="headerlink" title="Sinusoidal Signals"></a>Sinusoidal Signals</h2><p>Sinusoidal signals (or sinusoids) 指的是一类周期性函数：</p>
+<p>\[<br>x(t)=\mu\cos(\omega_0t+\phi)=\frac{\mu}{2}[\exp[j(\omega_0t+\phi)]+\exp[-j(\omega_0t+\phi)]]<br>\]</p>
+<p>\[<br>x(t)=\mu\sin(\omega_0t+\phi)=\frac{\mu}{j2}[\exp[j(\omega_0t+\phi)]-\exp[-j(\omega_0t+\phi)]]<br>\]</p>
+<p>\[<br>x(t)=\mu\exp[j(\omega_0t+\phi)]=\mu[\cos(\omega_0t+\phi)+j\sin(\omega_0t+\phi)]<br>\]</p>
+<p>其中</p>
+<p>\(\mu (&gt;0)\)    magnitude (or amplitude)</p>
+<p>\(\omega_0\)    angular frequency (rad/s)</p>
+<p>\(\phi\)    phase (radians)</p>
+<p>\(\omega_0t+\phi\)    instantaneous phase (radians)</p>
+<p>一种常见的做法是将\(\omega_0\)替换为\(2\pi f_0\)，其中\(f_0\)是 cyclic frequency (in Hz)。</p>
+<p>基本周期可通过\(T_0=\frac{2\pi}{\omega_0}=\frac{1}{f_0}\)求得。</p>
+<h1 id="Time-Scaling-Reversal-and-Shifting-of-Signals"><a href="#Time-Scaling-Reversal-and-Shifting-of-Signals" class="headerlink" title="Time-Scaling, -Reversal and -Shifting of Signals"></a>Time-Scaling, -Reversal and -Shifting of Signals</h1><h2 id="Time-scaling"><a href="#Time-scaling" class="headerlink" title="Time-scaling"></a>Time-scaling</h2><p>对于一个信号\(x(t)\)的 time-scaling 是将时间变量\(t\)替换为\(\alpha t\)，其中\(\alpha\)为正实数。</p>
+<p>当\(0&lt;\alpha &lt;1\)时，在时间轴进行扩张（expansion）。</p>
+<p>当\(\alpha &gt;1\)时，在时间轴进行收缩（contraction）。</p>
+<h2 id="Time-reversal"><a href="#Time-reversal" class="headerlink" title="Time-reversal"></a>Time-reversal</h2><p>对于一个信号\(x(t)\)的 time-reversal 是将时间变量\(t\)替换为\(-t\)。</p>
+<h2 id="Time-shifting"><a href="#Time-shifting" class="headerlink" title="Time-shifting"></a>Time-shifting</h2><p>对于一个信号\(x(t)\)的 time-shifting 是将时间变量\(t\)替换为\(t-\beta\)，其中\(\beta\)为实数。</p>
+<p>当\(\beta &gt;0\)时，延迟\(\beta\)个单位的时间。</p>
+<p>当\(\beta &lt;0\)时，提前\(\beta\)个单位的时间。</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/">信号与系统</a></div><div class="post_share"><div class="social-share" data-image="/img/bg2.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/2021-02-09-01/"><img class="prev-cover" src="/img/bg2.jpg" onerror="onerror=null;src='/img/404.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">信号与系统学习笔记#2</div></div></a></div><div class="next-post pull-right"><a href="/posts/2020-12-05-01/"><img class="next-cover" src="/img/bg_unity.jpg" onerror="onerror=null;src='/img/404.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">TextMesh Pro 显示中文字符的方法</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/2021-02-09-01/" title="信号与系统学习笔记#2"><img class="cover" src="/img/bg2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-09</div><div class="title">信号与系统学习笔记#2</div></div></a></div><div><a href="/posts/2021-02-20-01/" title="信号与系统学习笔记#3"><img class="cover" src="/img/bg2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-20</div><div class="title">信号与系统学习笔记#3</div></div></a></div><div><a href="/posts/2021-02-25-01/" title="信号与系统学习笔记#4"><img class="cover" src="/img/bg2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-02-25</div><div class="title">信号与系统学习笔记#4</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/404.png'" alt="avatar"/></div><div class="author-info__name">Wu Haitao</div><div class="author-info__description">这个人很懒~</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Wu-Haitao"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Wu-Haitao" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:wuhaitao99.st@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a><a class="social-icon" href="https://steamcommunity.com/id/Wu_Haitao" target="_blank" title="Steam"><i class="fab fa-steam"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E5%88%86%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">信号分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Analog-and-Digital-signals"><span class="toc-number">1.1.</span> <span class="toc-text">Analog and Digital signals</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Continuous-time-signal"><span class="toc-number">1.1.1.</span> <span class="toc-text">Continuous-time signal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Discrete-time-signal"><span class="toc-number">1.1.2.</span> <span class="toc-text">Discrete-time signal</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Periodic-and-Aperiodic-signals"><span class="toc-number">1.2.</span> <span class="toc-text">Periodic and Aperiodic signals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Real-and-Complex-signals"><span class="toc-number">1.3.</span> <span class="toc-text">Real and Complex signals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Energy-and-Power-signals"><span class="toc-number">1.4.</span> <span class="toc-text">Energy and Power signals</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E4%BF%A1%E5%8F%B7"><span class="toc-number">2.</span> <span class="toc-text">基础信号</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Unit-Step-function"><span class="toc-number">2.1.</span> <span class="toc-text">The Unit Step function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Sign-or-Signum-function"><span class="toc-number">2.2.</span> <span class="toc-text">The Sign(or Signum) function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Rectangle-function"><span class="toc-number">2.3.</span> <span class="toc-text">The Rectangle function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Triangle-function"><span class="toc-number">2.4.</span> <span class="toc-text">The Triangle function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Sinc-sine-Cardinal-function"><span class="toc-number">2.5.</span> <span class="toc-text">The Sinc(sine Cardinal) function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Real-Exponential-signal"><span class="toc-number">2.6.</span> <span class="toc-text">Real Exponential signal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Unit-Impulse-or-Dirac-%CE%B4-function"><span class="toc-number">2.7.</span> <span class="toc-text">The Unit Impulse(or Dirac-δ) function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Dirac-Comb-function"><span class="toc-number">2.8.</span> <span class="toc-text">The Dirac Comb function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sinusoidal-Signals"><span class="toc-number">2.9.</span> <span class="toc-text">Sinusoidal Signals</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Time-Scaling-Reversal-and-Shifting-of-Signals"><span class="toc-number">3.</span> <span class="toc-text">Time-Scaling, -Reversal and -Shifting of Signals</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Time-scaling"><span class="toc-number">3.1.</span> <span class="toc-text">Time-scaling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Time-reversal"><span class="toc-number">3.2.</span> <span class="toc-text">Time-reversal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Time-shifting"><span class="toc-number">3.3.</span> <span class="toc-text">Time-shifting</span></a></li></ol></li></ol></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Unity-%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">Unity 学习</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">前端学习</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">课程学习笔记</span><span class="card-category-list-count">39</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 1.2em; color: #999">C#</a> <a href="/tags/CSS/" style="font-size: 1.2em; color: #999">CSS</a> <a href="/tags/Computer-Architecture/" style="font-size: 1.25em; color: #999">Computer Architecture</a> <a href="/tags/HTML/" style="font-size: 1.2em; color: #999">HTML</a> <a href="/tags/Hexo/" style="font-size: 1.15em; color: #999">Hexo</a> <a href="/tags/Java/" style="font-size: 1.1em; color: #999">Java</a> <a href="/tags/Latex/" style="font-size: 1.1em; color: #999">Latex</a> <a href="/tags/Unity/" style="font-size: 1.35em; color: #999">Unity</a> <a href="/tags/WPF/" style="font-size: 1.1em; color: #999">WPF</a> <a href="/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/" style="font-size: 1.4em; color: #999">信号与系统</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.35em; color: #999">前端</a> <a href="/tags/%E5%8F%8D%E9%A6%88%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/" style="font-size: 1.5em; color: #999">反馈控制系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">数据结构</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.45em; color: #999">机器学习</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%9B%B8%E5%85%B3/" style="font-size: 1.1em; color: #999">游戏相关</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.3em; color: #999">算法</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.5em; color: #999">计算机网络</a></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Wu Haitao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+btf.isJqueryLoad(function() {
+  $(window).on('load', function() {
+    preloader.endLoading();
+  });
+});</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://unpkg.com/@waline/client@v2/dist/waline.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://my-project-wu-haitao.vercel.app/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      imageUploader: false,
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://unpkg.com/@waline/client@v2/dist/waline.js').then(initWaline)
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script id="canvas_nest" defer="defer" color="255,255,255" opacity="0.8" zIndex="-1" count="99" mobile="false" src="/js/canvas-nest.min.js"></script><script src="/js/removeBG.js"></script><script src="/js/FunnyTitle.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = false;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="/js/ClickShowText.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script></div><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+btf.isJqueryLoad(function() {
+  $(window).on('load', function() {
+    preloader.endLoading();
+  });
+});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"position":"right","hOffset":50,"vOffset":-25},"mobile":{"show":false},"log":false});</script></body></html>

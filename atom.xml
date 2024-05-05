@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Haitao 的博客</title>
+  
+  
+  <link href="https://wu-haitao.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://wu-haitao.github.io/"/>
+  <updated>2024-05-05T19:58:22.078Z</updated>
+  <id>https://wu-haitao.github.io/</id>
+  
+  <author>
+    <name>Wu Haitao</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>强化学习复习笔记#2</title>
+    <link href="https://wu-haitao.github.io/posts/2024-05-01-01/"/>
+    <id>https://wu-haitao.github.io/posts/2024-05-01-01/</id>
+    <published>2024-05-01T22:57:50.000Z</published>
+    <updated>2024-05-05T19:58:22.078Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="机器学习" scheme="https://wu-haitao.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>强化学习复习笔记#1</title>
+    <link href="https://wu-haitao.github.io/posts/2024-04-29-01/"/>
+    <id>https://wu-haitao.github.io/posts/2024-04-29-01/</id>
+    <published>2024-04-29T23:23:50.000Z</published>
+    <updated>2024-05-05T19:58:22.078Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="机器学习" scheme="https://wu-haitao.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FFmpeg 常用命令</title>
+    <link href="https://wu-haitao.github.io/posts/2022-12-12-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-12-12-01/</id>
+    <published>2022-12-12T01:12:23.000Z</published>
+    <updated>2024-05-05T19:58:22.078Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>常用图论算法整理</title>
+    <link href="https://wu-haitao.github.io/posts/2022-12-07-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-12-07-01/</id>
+    <published>2022-12-07T17:17:33.000Z</published>
+    <updated>2024-05-05T19:58:22.074Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="算法" scheme="https://wu-haitao.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习 - CNN</title>
+    <link href="https://wu-haitao.github.io/posts/2022-11-17-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-11-17-01/</id>
+    <published>2022-11-17T14:52:48.000Z</published>
+    <updated>2024-05-05T19:58:22.070Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="机器学习" scheme="https://wu-haitao.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习 - Perceptron 和 Neural Networks</title>
+    <link href="https://wu-haitao.github.io/posts/2022-11-15-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-11-15-01/</id>
+    <published>2022-11-15T14:15:15.000Z</published>
+    <updated>2024-05-05T19:58:22.070Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="机器学习" scheme="https://wu-haitao.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动态规划 - 背包问题</title>
+    <link href="https://wu-haitao.github.io/posts/2022-11-13-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-11-13-01/</id>
+    <published>2022-11-13T14:54:25.000Z</published>
+    <updated>2024-05-05T19:58:22.070Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="算法" scheme="https://wu-haitao.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="C#" scheme="https://wu-haitao.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习 - Data Processing</title>
+    <link href="https://wu-haitao.github.io/posts/2022-11-12-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-11-12-01/</id>
+    <published>2022-11-12T14:43:17.000Z</published>
+    <updated>2024-05-05T19:58:22.066Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="机器学习" scheme="https://wu-haitao.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习 - Evaluation</title>
+    <link href="https://wu-haitao.github.io/posts/2022-11-10-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-11-10-01/</id>
+    <published>2022-11-10T21:42:43.000Z</published>
+    <updated>2024-05-05T19:58:22.066Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="机器学习" scheme="https://wu-haitao.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Computer Architecture - Multiprocessor Systems</title>
+    <link href="https://wu-haitao.github.io/posts/2022-11-03-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-11-03-01/</id>
+    <published>2022-11-03T15:45:37.000Z</published>
+    <updated>2024-05-05T19:58:22.066Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Computer Architecture" scheme="https://wu-haitao.github.io/tags/Computer-Architecture/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习 - Paradigms 和 Tribes</title>
+    <link href="https://wu-haitao.github.io/posts/2022-09-17-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-09-17-01/</id>
+    <published>2022-09-17T15:34:25.000Z</published>
+    <updated>2024-05-05T19:58:22.066Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="机器学习" scheme="https://wu-haitao.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习 - Confusion Matrix</title>
+    <link href="https://wu-haitao.github.io/posts/2022-09-08-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-09-08-01/</id>
+    <published>2022-09-08T15:52:04.000Z</published>
+    <updated>2024-05-05T19:58:22.066Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="机器学习" scheme="https://wu-haitao.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Computer Architecture - ARM Instruction Format</title>
+    <link href="https://wu-haitao.github.io/posts/2022-09-04-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-09-04-01/</id>
+    <published>2022-09-04T16:02:33.000Z</published>
+    <updated>2024-05-05T19:58:22.062Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Computer Architecture" scheme="https://wu-haitao.github.io/tags/Computer-Architecture/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用数据结构简单梳理及 C# 实现</title>
+    <link href="https://wu-haitao.github.io/posts/2022-07-28-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-07-28-01/</id>
+    <published>2022-07-28T22:10:47.000Z</published>
+    <updated>2024-05-05T19:58:22.062Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="C#" scheme="https://wu-haitao.github.io/tags/C/"/>
+    
+    <category term="数据结构" scheme="https://wu-haitao.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在 Unity 中使用鼠标选择游戏对象</title>
+    <link href="https://wu-haitao.github.io/posts/2022-07-09-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-07-09-01/</id>
+    <published>2022-07-09T15:29:55.000Z</published>
+    <updated>2024-05-05T19:58:22.062Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Unity 学习" scheme="https://wu-haitao.github.io/categories/Unity-%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Unity" scheme="https://wu-haitao.github.io/tags/Unity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些 Unity Asset 分享</title>
+    <link href="https://wu-haitao.github.io/posts/2022-06-08-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-06-08-01/</id>
+    <published>2022-06-08T19:43:28.000Z</published>
+    <updated>2024-05-05T19:58:22.062Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Unity 学习" scheme="https://wu-haitao.github.io/categories/Unity-%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Unity" scheme="https://wu-haitao.github.io/tags/Unity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>获取 ListBoxItem 时返回 null 的解决方法</title>
+    <link href="https://wu-haitao.github.io/posts/2022-05-09-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-05-09-01/</id>
+    <published>2022-05-09T14:40:58.000Z</published>
+    <updated>2024-05-05T19:58:22.062Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="WPF" scheme="https://wu-haitao.github.io/tags/WPF/"/>
+    
+    <category term="C#" scheme="https://wu-haitao.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>反馈控制系统学习笔记#9</title>
+    <link href="https://wu-haitao.github.io/posts/2022-04-20-02/"/>
+    <id>https://wu-haitao.github.io/posts/2022-04-20-02/</id>
+    <published>2022-04-20T15:17:14.000Z</published>
+    <updated>2024-05-05T19:58:22.062Z</updated>
+    
+    
+    <summary type="html">补偿</summary>
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="反馈控制系统" scheme="https://wu-haitao.github.io/tags/%E5%8F%8D%E9%A6%88%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>反馈控制系统学习笔记#8</title>
+    <link href="https://wu-haitao.github.io/posts/2022-04-20-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-04-20-01/</id>
+    <published>2022-04-20T14:35:07.000Z</published>
+    <updated>2024-05-05T19:58:22.058Z</updated>
+    
+    
+    <summary type="html">稳定裕度</summary>
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="反馈控制系统" scheme="https://wu-haitao.github.io/tags/%E5%8F%8D%E9%A6%88%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>反馈控制系统学习笔记#7</title>
+    <link href="https://wu-haitao.github.io/posts/2022-04-19-01/"/>
+    <id>https://wu-haitao.github.io/posts/2022-04-19-01/</id>
+    <published>2022-04-19T23:06:27.000Z</published>
+    <updated>2024-05-05T19:58:22.058Z</updated>
+    
+    
+    <summary type="html">奈奎斯特稳定判据</summary>
+    
+    
+    
+    <category term="课程学习笔记" scheme="https://wu-haitao.github.io/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="反馈控制系统" scheme="https://wu-haitao.github.io/tags/%E5%8F%8D%E9%A6%88%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+</feed>

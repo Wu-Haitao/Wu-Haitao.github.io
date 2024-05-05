@@ -1,0 +1,316 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;en&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>计算机网络：Network Layer | Haitao 的博客</title><meta name="keywords" content="计算机网络"><meta name="author" content="Wu Haitao"><meta name="copyright" content="Wu Haitao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="网络层（Network Layer）有两个主要的功能：  Forwarding Move packets from router’s input to appropriate router output  Routing Determine route taken by packets from source to destination   IP网际协议（Internet Protocol），又">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络：Network Layer">
+<meta property="og:url" content="https://wu-haitao.github.io/posts/2022-04-05-02/index.html">
+<meta property="og:site_name" content="Haitao 的博客">
+<meta property="og:description" content="网络层（Network Layer）有两个主要的功能：  Forwarding Move packets from router’s input to appropriate router output  Routing Determine route taken by packets from source to destination   IP网际协议（Internet Protocol），又">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wu-haitao.github.io/img/networkBG.jpg">
+<meta property="article:published_time" content="2022-04-05T18:55:54.000Z">
+<meta property="article:modified_time" content="2024-05-05T19:58:22.054Z">
+<meta property="article:author" content="Wu Haitao">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wu-haitao.github.io/img/networkBG.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://wu-haitao.github.io/posts/2022-04-05-02/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":false,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机网络：Network Layer',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2024-05-05 19:58:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Haitao 的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="loader-box"></div><div class="my-loader"></div></div><div id="web_bg_container_not_home"><div id="web_bg_not_home">     </div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.webp" onerror="onerror=null;src='/img/404.png'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/server/"><i class="fa-fw fas fa-server"></i><span> 服务器</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-pen-nib"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-laugh-squint"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fab fa-steam-symbol"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/tmdbList/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera-retro"></i><span> 摄影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-toolbox"></i><span> 工具</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://my-project-wu-haitao.vercel.app/ui/"><i class="fa-fw fab fa-buffer"></i><span> 博客留言管理</span></a></li><li><a class="site-page child" href="/tools/html_css_js_editor.html"><i class="fa-fw fas fa-code"></i><span> HTML/CSS/JavaScript 测试</span></a></li><li><a class="site-page child" href="/tools/regular_expression_tools.html"><i class="fa-fw fas fa-code"></i><span> 正则表达式</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Haitao 的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/server/"><i class="fa-fw fas fa-server"></i><span> 服务器</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-pen-nib"></i><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-laugh-squint"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/steamgames/"><i class="fa-fw fab fa-steam-symbol"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/tmdbList/"><i class="fa-fw fas fa-film"></i><span> 电影</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-camera-retro"></i><span> 摄影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-toolbox"></i><span> 工具</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://my-project-wu-haitao.vercel.app/ui/"><i class="fa-fw fab fa-buffer"></i><span> 博客留言管理</span></a></li><li><a class="site-page child" href="/tools/html_css_js_editor.html"><i class="fa-fw fas fa-code"></i><span> HTML/CSS/JavaScript 测试</span></a></li><li><a class="site-page child" href="/tools/regular_expression_tools.html"><i class="fa-fw fas fa-code"></i><span> 正则表达式</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">计算机网络：Network Layer</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2022-04-05T18:55:54.000Z" title="undefined 2022-04-05 18:55:54">2022-04-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">课程学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">741</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>网络层（Network Layer）有两个主要的功能：</p>
+<ul>
+<li><p>Forwarding</p>
+<p>Move packets from router’s input to appropriate router output</p>
+</li>
+<li><p>Routing</p>
+<p>Determine route taken by packets from source to destination</p>
+</li>
+</ul>
+<h1 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h1><p>网际协议（Internet Protocol），又称互联网协议。</p>
+<h2 id="Datagram-format"><a href="#Datagram-format" class="headerlink" title="Datagram format"></a>Datagram format</h2><p><img src="1.jpg"></p>
+<p>关于 fragmentation 和 reassembly：</p>
+<p><img src="2.png"></p>
+<h2 id="Addressing"><a href="#Addressing" class="headerlink" title="Addressing"></a>Addressing</h2><p>IP 地址是对于 host 和 router interface 的 32-bit 标识。</p>
+<p><img src="3.png"></p>
+<h3 id="Subnet"><a href="#Subnet" class="headerlink" title="Subnet"></a>Subnet</h3><p>在同一子网中的设备的 IP 地址具有相同的前缀。</p>
+<p>子网掩码（subnet mask）是一种用来指明一个 IP 地址的哪些位标识的是主机所在的网络地址以及哪些位标识的是主机地址的位掩码。</p>
+<h3 id="CIDR"><a href="#CIDR" class="headerlink" title="CIDR"></a>CIDR</h3><p>无类别域间路由（Classless Inter-Domain Routing）使得 IP 地址的子网标识部分可以为任意长度，即子网掩码长度可变。</p>
+<p>地址格式：a.b.c.d/x，其中 x 表示子网标识部分的位数。</p>
+<p><img src="5.png"></p>
+<h3 id="DHCP"><a href="#DHCP" class="headerlink" title="DHCP"></a>DHCP</h3><p>动态主机设置协议（Dynamic Host Configuration Protocol）使得设备能够动态地获得 IP 地址。</p>
+<p><img src="6.png"></p>
+<h3 id="NAT"><a href="#NAT" class="headerlink" title="NAT"></a>NAT</h3><p>网络地址转换（Network Address Translation）是用于解决子网下所有设备仅有一个公网 IP 这一情况的技术。</p>
+<p><img src="7.jpg"></p>
+<p>NAT 设备需要：</p>
+<ul>
+<li><p>对于传出的数据：将（源 IP 地址，port #）替换为（NAT IP 地址，新 port #）</p>
+</li>
+<li><p>记录：所有（源 IP 地址，port #）至（NAT IP 地址，新 port #）的转换对</p>
+</li>
+<li><p>对于传入的数据：将（NAT IP 地址，新 port #）替换为（源 IP 地址，port #）</p>
+</li>
+</ul>
+<h2 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h2><p>前文主要叙述的是 IPv4。相对于 IPv4，IPv6 有更大的地址空间，更快更安全。</p>
+<p><img src="4.png"></p>
+<h1 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h1><p>互联网控制消息协议（Internet Control Message Protocol）被用于在网际协议中发送控制消息，提供可能发生在通信环境中的各种问题反馈。</p>
+<p>可以在 cmd 中尝试下列命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ping wu-haitao.github.io</span><br><span class="line">tracert wu-haitao.github.io</span><br></pre></td></tr></table></figure>
+
+<h1 id="Routing"><a href="#Routing" class="headerlink" title="Routing"></a>Routing</h1><h2 id="路由算法"><a href="#路由算法" class="headerlink" title="路由算法"></a>路由算法</h2><p>路由算法是用于寻找最小花费路径的算法。</p>
+<h3 id="Link-State-Algorithm"><a href="#Link-State-Algorithm" class="headerlink" title="Link State Algorithm"></a>Link State Algorithm</h3><p><a target="_blank" rel="noopener" href="https://algorithms.discrete.ma.tum.de/graph-algorithms/spp-dijkstra/index_en.html">Dijkstra’s algorithm</a></p>
+<p>路由器需要有完全的拓扑和链路费用信息。</p>
+<h3 id="Distance-Vector-Algorithm"><a href="#Distance-Vector-Algorithm" class="headerlink" title="Distance Vector Algorithm"></a>Distance Vector Algorithm</h3><p><a target="_blank" rel="noopener" href="https://algorithms.discrete.ma.tum.de/graph-algorithms/spp-bellman-ford/index_en.html">The Bellman-Ford Algorithm</a></p>
+<p>Distance Vector 算法是基于 Bellman-Ford Equation 的：</p>
+<ul>
+<li><p>Define distances at each node <em>x</em></p>
+<ul>
+<li>d<sub>x</sub>(y) = cost of least-cost path from <em>x</em> to <em>y</em></li>
+</ul>
+</li>
+<li><p>Update distances based on neighbors</p>
+<ul>
+<li>d<sub>x</sub>(y) = min{c(x, v) + d<sub>v</sub>(y)} over all neighbors</li>
+</ul>
+</li>
+</ul>
+<p>具体做法为：</p>
+<ul>
+<li><p>每一节点</p>
+<ul>
+<li><p>知道自己与邻居节点之间的路径花费</p>
+</li>
+<li><p>维护自身的距离向量（包含自身到所有其它节点的路径费用估计值）</p>
+</li>
+<li><p>维护邻居节点的距离向量</p>
+</li>
+</ul>
+</li>
+<li><p>节点会定期向邻居发送自己的距离向量</p>
+</li>
+<li><p>当一个节点收到来自邻居的新的距离向量时，将其保存并通过 Bellman-Ford Equation 更新自己的距离向量，更新完毕后发送给每一个邻居</p>
+</li>
+<li><p>最终距离向量会收敛至最小路径</p>
+</li>
+</ul>
+<p>DV 算法是迭代（iterative）、异步（asynchronous）且分布式（distributed）的。</p>
+<p>路由器仅需邻居以及与邻居的链路费用的信息。</p>
+<h2 id="路由协议"><a href="#路由协议" class="headerlink" title="路由协议"></a>路由协议</h2><h3 id="Intra-AS-Routing"><a href="#Intra-AS-Routing" class="headerlink" title="Intra-AS Routing"></a>Intra-AS Routing</h3><p><strong>Interior Gateway Protocols (IGP)</strong></p>
+<ul>
+<li><p>RIP: Routing Information Protocol (Distance Vector)</p>
+</li>
+<li><p>OSPF: Open Shortest Path First (Link State)</p>
+</li>
+</ul>
+<h3 id="Inter-AS-Routing"><a href="#Inter-AS-Routing" class="headerlink" title="Inter-AS Routing"></a>Inter-AS Routing</h3><p><strong>Border Gateway Protocol (BGP)</strong></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></div><div class="post_share"><div class="social-share" data-image="/img/networkBG.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/2022-04-17-01/"><img class="prev-cover" src="/img/bg2.jpg" onerror="onerror=null;src='/img/404.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">反馈控制系统学习笔记#6</div></div></a></div><div class="next-post pull-right"><a href="/posts/2022-04-05-01/"><img class="next-cover" src="/img/networkBG.jpg" onerror="onerror=null;src='/img/404.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">计算机网络：Transport Layer</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/2022-01-27-01/" title="计算机网络：Multiplexing 和 Switching"><img class="cover" src="/img/networkBG.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-27</div><div class="title">计算机网络：Multiplexing 和 Switching</div></div></a></div><div><a href="/posts/2022-02-02-01/" title="计算机网络：网络分层架构"><img class="cover" src="/img/networkBG.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-02</div><div class="title">计算机网络：网络分层架构</div></div></a></div><div><a href="/posts/2022-02-07-01/" title="计算机网络：Framing"><img class="cover" src="/img/networkBG.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-02-07</div><div class="title">计算机网络：Framing</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/404.png'" alt="avatar"/></div><div class="author-info__name">Wu Haitao</div><div class="author-info__description">这个人很懒~</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Wu-Haitao"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Wu-Haitao" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:wuhaitao99.st@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a><a class="social-icon" href="https://steamcommunity.com/id/Wu_Haitao" target="_blank" title="Steam"><i class="fab fa-steam"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#IP"><span class="toc-number">1.</span> <span class="toc-text">IP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Datagram-format"><span class="toc-number">1.1.</span> <span class="toc-text">Datagram format</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Addressing"><span class="toc-number">1.2.</span> <span class="toc-text">Addressing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Subnet"><span class="toc-number">1.2.1.</span> <span class="toc-text">Subnet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CIDR"><span class="toc-number">1.2.2.</span> <span class="toc-text">CIDR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DHCP"><span class="toc-number">1.2.3.</span> <span class="toc-text">DHCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NAT"><span class="toc-number">1.2.4.</span> <span class="toc-text">NAT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPv6"><span class="toc-number">1.3.</span> <span class="toc-text">IPv6</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ICMP"><span class="toc-number">2.</span> <span class="toc-text">ICMP</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Routing"><span class="toc-number">3.</span> <span class="toc-text">Routing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">路由算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Link-State-Algorithm"><span class="toc-number">3.1.1.</span> <span class="toc-text">Link State Algorithm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Distance-Vector-Algorithm"><span class="toc-number">3.1.2.</span> <span class="toc-text">Distance Vector Algorithm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE"><span class="toc-number">3.2.</span> <span class="toc-text">路由协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Intra-AS-Routing"><span class="toc-number">3.2.1.</span> <span class="toc-text">Intra-AS Routing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Inter-AS-Routing"><span class="toc-number">3.2.2.</span> <span class="toc-text">Inter-AS Routing</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Unity-%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">Unity 学习</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">前端学习</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">课程学习笔记</span><span class="card-category-list-count">39</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 1.2em; color: #999">C#</a> <a href="/tags/CSS/" style="font-size: 1.2em; color: #999">CSS</a> <a href="/tags/Computer-Architecture/" style="font-size: 1.25em; color: #999">Computer Architecture</a> <a href="/tags/HTML/" style="font-size: 1.2em; color: #999">HTML</a> <a href="/tags/Hexo/" style="font-size: 1.15em; color: #999">Hexo</a> <a href="/tags/Java/" style="font-size: 1.1em; color: #999">Java</a> <a href="/tags/Latex/" style="font-size: 1.1em; color: #999">Latex</a> <a href="/tags/Unity/" style="font-size: 1.35em; color: #999">Unity</a> <a href="/tags/WPF/" style="font-size: 1.1em; color: #999">WPF</a> <a href="/tags/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%B3%BB%E7%BB%9F/" style="font-size: 1.4em; color: #999">信号与系统</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.35em; color: #999">前端</a> <a href="/tags/%E5%8F%8D%E9%A6%88%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/" style="font-size: 1.5em; color: #999">反馈控制系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.1em; color: #999">数据结构</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 1.45em; color: #999">机器学习</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E7%9B%B8%E5%85%B3/" style="font-size: 1.1em; color: #999">游戏相关</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.3em; color: #999">算法</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.5em; color: #999">计算机网络</a></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Wu Haitao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+btf.isJqueryLoad(function() {
+  $(window).on('load', function() {
+    preloader.endLoading();
+  });
+});</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadWaline () {
+  function insertCSS () {
+    const link = document.createElement("link")
+    link.rel = "stylesheet"
+    link.href = "https://unpkg.com/@waline/client@v2/dist/waline.css"
+    document.head.appendChild(link)
+  }
+
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://my-project-wu-haitao.vercel.app/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      imageUploader: false,
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else {
+    insertCSS()
+    getScript('https://unpkg.com/@waline/client@v2/dist/waline.js').then(initWaline)
+  }
+}
+
+if ('Waline' === 'Waline' || !true) {
+  if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><script id="canvas_nest" defer="defer" color="255,255,255" opacity="0.8" zIndex="-1" count="99" mobile="false" src="/js/canvas-nest.min.js"></script><script src="/js/removeBG.js"></script><script src="/js/FunnyTitle.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = false;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="/js/ClickShowText.js" data-mobile="false" data-text="富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script></div><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+btf.isJqueryLoad(function() {
+  $(window).on('load', function() {
+    preloader.endLoading();
+  });
+});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"position":"right","hOffset":50,"vOffset":-25},"mobile":{"show":false},"log":false});</script></body></html>
